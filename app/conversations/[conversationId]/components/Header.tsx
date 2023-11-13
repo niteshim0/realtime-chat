@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
         <Link className="lg:hidden block text-sky-500 hover:text-sky-600 transition cursor-pointer" href="/conversation">
           <HiChevronLeft size={32} />
         </Link>
-        <Avatar user={otherUser} />
+        <Avatar user={otherUser} />{/*there seems to be some problem regarding user*/}
         <div className="flex flex-col">
           <div>{conversation.name || otherUser.name}</div>
           <div className="text-sm font-light text-neutral-500">{statusText}</div>
