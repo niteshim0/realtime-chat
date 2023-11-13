@@ -5,6 +5,7 @@ import { FullConversationType } from "@/app/types";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import clsx from "clsx";
+import ConversationBox from "./ConversationBox";
 import {MdOutlineGroupAdd} from "react-icons/md";
 
 interface ConversationListProps{
