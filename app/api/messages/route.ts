@@ -41,6 +41,28 @@ export async function POST(request: Request) {
       },
     });
 
+    const updatedConversation = await prisma.conversation.update({
+      where: {
+        id: conversationId
+      },
+      data: {
+        lastMessageAt: new Date(),
+        messages: {
+          connect: {
+            id: newMessage.id
+          }
+        }
+      },
+      include: {
+        users: true,
+        messages: {
+          include: {
+            seen: true
+          }
+        }
+      }
+    });
+
     
     return new NextResponse(JSON.stringify(newMessage), { status: 200 });
   } catch (error) {
