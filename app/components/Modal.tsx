@@ -112,3 +112,5 @@ const Modal: React.FC<ModalProps> = ({isOpen,onClose,children}) => {
     </Transition.Root>
   )
 };
+
+export default Modal;
