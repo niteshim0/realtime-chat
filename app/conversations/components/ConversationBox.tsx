@@ -1,5 +1,5 @@
 'use client';
-import AvatarGroup from "@/app/components/AvatarGroup";
+
 import { useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { Conversation, Message, User } from "@prisma/client";
@@ -9,6 +9,7 @@ import clsx from "clsx";
 
 import Avatar from "@/app/components/Avatar";
 import useOtherUser from "@/app/hooks/useOtherUser";
+import AvatarGroup from "@/app/components/AvatarGroup";
 import { FullConversationType } from "@/app/types";
 
 interface ConversationBoxProps {
@@ -82,7 +83,6 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
         selected ? 'bg-neutral-100' : 'bg-white'
       )}
     >
-      
       {data.isGroup ? (
         <AvatarGroup users={data.users} />
       ) : (

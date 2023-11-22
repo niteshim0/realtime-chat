@@ -12,7 +12,7 @@ import { User } from '@prisma/client';
 
 import Input from '@/app/components/inputs/Input';
 import Select from '@/app/components/inputs/Select';
-import Modal from '@/app/components/Modal';
+import Modal from '@/app/components/modals/Modal';
 import Button from '@/app/components/Button';
 import { toast } from 'react-hot-toast';
 

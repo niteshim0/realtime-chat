@@ -5,7 +5,7 @@ import { Dialog } from '@headlessui/react'
 import { FiAlertTriangle } from 'react-icons/fi'
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import Modal from "@/app/components/Modal";
+import Modal from '@/app/components/modals/Modal';
 import Button from '@/app/components/Button';
 import useConversation from '@/app/hooks/useConversation';
 import { toast } from 'react-hot-toast';
@@ -19,9 +19,9 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
   isOpen, 
   onClose 
 }) => {
-    const router = useRouter();//for going back to conversation after deleting a chat
-    const {conversationId} = useConversation();
-    const[isLoading,setIsLoading] = useState(false);
+  const router = useRouter();
+  const { conversationId } = useConversation();
+  const [isLoading, setIsLoading] = useState(false);
   
   const onDelete = useCallback(() => {
     setIsLoading(true);
