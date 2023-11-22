@@ -4,7 +4,7 @@
    This means that by defining a "use client" in a file, all other modules imported into it,
    including child components, are considered part of the client bundle.
    By default, the components are rendered on the server */
-
+import AvatarGroup from "@/app/components/AvatarGroup";
 import useOtherUser from "@/app/hooks/useOtherUser";
 import { Conversation, User } from "@prisma/client";
 import { useMemo, useState } from "react";
@@ -43,7 +43,11 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
         <Link className="lg:hidden block text-sky-500 hover:text-sky-600 transition cursor-pointer" href="/conversation">
           <HiChevronLeft size={32} />
         </Link>
-        <Avatar user={otherUser} />{/*there seems to be some problem regarding user*/}
+        {conversation.isGroup ? (
+        <AvatarGroup users={conversation.users} />
+      ) : (
+        <Avatar user={otherUser} />
+      )}{/*there seems to be some problem regarding user*/}
         <div className="flex flex-col">
           <div>{conversation.name || otherUser.name}</div>
           <div className="text-sm font-light text-neutral-500">{statusText}</div>

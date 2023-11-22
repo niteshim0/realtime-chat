@@ -7,7 +7,7 @@ import useOtherUser from '@/app/hooks/useOtherUser';
 import { Conversation, User } from '@prisma/client';
 import Avatar from '@/app/components/Avatar';
 import ConfirmModal from './ConfirmModal';
-
+import AvatarGroup from '@/app/components/AvatarGroup';
 // Define the ProfileDrawerProps interface
 interface ProfileDrawerProps {
   isOpen: boolean;
@@ -85,7 +85,11 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ isOpen, onClose, data }) 
                     <div className="relative mt-6 flex-1 px-4 sm:px-6">
                       <div className="flex flex-col items-center">
                         <div className="mb-2">
-                          <Avatar user={otherUser} />
+                        {data.isGroup ? (
+                         <AvatarGroup users={data.users} />
+                         ) : (
+                         <Avatar user={otherUser} />
+                            )}
                         </div>
                         <div>{title}</div>
                         <div className="text-sm text-gray-500">{statusText}</div>
