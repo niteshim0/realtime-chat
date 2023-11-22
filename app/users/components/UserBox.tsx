@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import {  User } from "@prisma/client";
 
 import Avatar from "@/app/components/Avatar";
-import LoadingModal from "@/app/components/LoadingModal";
+import LoadingModal from "@/app/components/modals/LoadingModal";
 
 interface UserBoxProps {
   data: User
