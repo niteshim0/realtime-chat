@@ -136,7 +136,7 @@ const AuthForm = () => {
             errors={errors}
             required
             id="email" 
-            label="Email address" 
+            label="Email " 
             type="email"
           />
           <Input 
